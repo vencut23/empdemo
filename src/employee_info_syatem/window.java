@@ -15,6 +15,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.border.MatteBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class window {
 
@@ -142,6 +144,10 @@ public class window {
 		frame.getContentPane().add(savebut);
 		
 		JButton delbut = new JButton("Delete");
+		delbut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		delbut.setBounds(196, 322, 100, 32);
 		frame.getContentPane().add(delbut);
 		
@@ -150,10 +156,18 @@ public class window {
 		frame.getContentPane().add(table);
 		
 		table_1 = new JTable();
+		
 		table_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		table_1.setFont(new Font("Verdana", Font.PLAIN, 11));
-		table_1.setModel(model);
-		table_1.setBounds(314, 57, 313, 297);
+		table_1.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+			},
+			new String[] {
+				"firstname", "lastname", "phone", "empid"
+			}
+		));
+		table_1.setBounds(314, 54, 313, 297);
 		frame.getContentPane().add(table_1);
 	}
 }
