@@ -144,10 +144,7 @@ public class window {
 		frame.getContentPane().add(savebut);
 		
 		JButton delbut = new JButton("Delete");
-		delbut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
 		delbut.setBounds(196, 322, 100, 32);
 		frame.getContentPane().add(delbut);
 		
